@@ -1,16 +1,25 @@
 package io.gonative.android;
 
 import android.app.Application;
+import android.os.Bundle;
 import android.os.Message;
+import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.webkit.ValueCallback;
 import android.widget.Toast;
 
+import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.ChabokNotification;
+import com.adpdigital.push.NotificationHandler;
+import com.adpdigital.push.PushMessage;
 import com.joanzapata.iconify.Iconify;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.onesignal.OSSubscriptionObserver;
 import com.onesignal.OSSubscriptionState;
 import com.onesignal.OSSubscriptionStateChanges;
 import com.onesignal.OneSignal;
+
+import org.json.JSONObject;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -32,9 +41,21 @@ public class GoNativeApplication extends Application {
     private int numOneSignalChecks = 0;
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
+    private final String TAG = this.getClass().getName();
+    private AdpPushClient chabok = null;
+
     @Override
     public void onCreate() {
         super.onCreate();
+
+        initPushClient();
+
+        String userId = chabok.getUserId();
+        if (userId != null && !userId.isEmpty()) {
+            chabok.register(userId);
+        } else {
+            chabok.register("Chabok-Starter-GoNative");
+        }
 
         AppConfig appConfig = AppConfig.getInstance(this);
         if (appConfig.configError != null) {
@@ -129,4 +150,78 @@ public class GoNativeApplication extends Application {
     public void setWebviewValueCallback(ValueCallback webviewValueCallback) {
         this.webviewValueCallback = webviewValueCallback;
     }
+
+    private synchronized void initPushClient() {
+        if (chabok == null) {
+            chabok = AdpPushClient.init(
+                    getApplicationContext(),
+                    MainActivity.class,
+                    "chabok-starter/839879285435",
+                    "70df4ae2e1fd03518ce3e3b21ee7ca7943577749",
+                    "chabok-starter",
+                    "chabok-starter"
+            );
+            chabok.setDevelopment(true);
+            chabok.addListener(this);
+            chabok.addNotificationHandler(getNotificationHandler());
+        }
+    }
+
+    private NotificationHandler getNotificationHandler(){
+        return new NotificationHandler(){
+
+            @Override
+            public Class getActivityClass(ChabokNotification chabokNotification) {
+                // return preferred activity class to be opened on this message's notification
+                return MainActivity.class;
+            }
+
+            @Override
+            public boolean buildNotification(ChabokNotification chabokNotification, NotificationCompat.Builder builder) {
+                // use builder to customize the notification object
+                // return false to prevent this notification to be shown to the user, otherwise true
+                getDataFromChabokNotification(chabokNotification);
+                return true;
+            }
+        };
+    }
+
+    private void getDataFromChabokNotification(ChabokNotification chabokNotification) {
+        if (chabokNotification != null) {
+            if (chabokNotification.getExtras() != null) {
+                Bundle payload = chabokNotification.getExtras();
+
+                //FCM message data is here
+                Object data = payload.get("data");
+                if (data != null) {
+                    Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + String.valueOf(data));
+                }
+            } else if (chabokNotification.getMessage() != null) {
+                PushMessage payload = chabokNotification.getMessage();
+
+                //Chabok message data is here
+                JSONObject data = payload.getData();
+                if (data != null) {
+                    Log.d(TAG, "getDataFromChabokNotification: The ChabokNotification data is : " + data);
+                }
+            }
+        }
+    }
+
+    public void onEvent(PushMessage message) {
+        Log.d(TAG, "\n\n--------------------\n\nGOT MESSAGE " + message + "\n\n");
+        JSONObject data = message.getData();
+        if (data != null){
+            Log.d(TAG, "--------------------\n\n The message data is : " + data + "\n\n");
+        }
+    }
+
+    @Override
+    public void onTerminate() {
+        if (chabok != null)
+            chabok.dismiss();
+
+        super.onTerminate();
+    }
+
 }
