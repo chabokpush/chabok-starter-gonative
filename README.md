@@ -28,4 +28,4 @@ for more information about this app please visit our [website](http://chabokpush
 
 ## Usage
 
-The iOS GoNative has conflict with Reachability class. Update **Reachability.h** and **Reachability.m** file in your project to [Reachability.h](https://github.com/chabokpush/chabok-starter-gonative/blob/5f1da9f96cf50db57a1a530e4e5d9548ae9f764a/ios/LeanIOS/ReachabilityGoNative.h#L49-L53) and [Reachability.m](https://github.com/chabokpush/chabok-starter-gonative/blob/eb06c7eafd18a36937981b4efb5cd3bfdab1a0d5/ios/LeanIOS/ReachabilityGoNative.m#L49-L57) file in starter sample project.
+The iOS GoNative has conflict with Reachability class. Update **Reachability.h** and **Reachability.m** file of your project to [Reachability.h](https://github.com/chabokpush/chabok-starter-gonative/blob/5f1da9f96cf50db57a1a530e4e5d9548ae9f764a/ios/LeanIOS/ReachabilityGoNative.h#L49-L53) and [Reachability.m](https://github.com/chabokpush/chabok-starter-gonative/blob/eb06c7eafd18a36937981b4efb5cd3bfdab1a0d5/ios/LeanIOS/ReachabilityGoNative.m#L49-L57) file in starter sample project.
