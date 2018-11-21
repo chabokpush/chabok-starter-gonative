@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ReachabilityGoNative.h"
+#import "Reachability.h"
 
 @interface LEANAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property ReachabilityGoNative *internetReachability;
+@property Reachability *internetReachability;
 @property BOOL isFirstLaunch;
 @property NSString *previousInitialUrl;
 

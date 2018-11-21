@@ -100,7 +100,7 @@
 		20F49C2719C7BE9100B46C5A /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F49C2619C7BE9100B46C5A /* CoreText.framework */; };
 		20FC7FB5199D1C7800A70B08 /* LEANTabManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7FB4199D1C7800A70B08 /* LEANTabManager.m */; };
 		B86C715E8D4968DBA6E5C020 /* Pods_GonativeIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8C5C07F7E78FC74468E745 /* Pods_GonativeIO.framework */; };
-		E6F9746B21A5A67B00F4DCD6 /* ReachabilityGoNative.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F9746921A5A67B00F4DCD6 /* ReachabilityGoNative.m */; };
+		E6F9746B21A5A67B00F4DCD6 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F9746921A5A67B00F4DCD6 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,8 +295,8 @@
 		20FC7FB3199D1C7800A70B08 /* LEANTabManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LEANTabManager.h; sourceTree = "<group>"; };
 		20FC7FB4199D1C7800A70B08 /* LEANTabManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LEANTabManager.m; sourceTree = "<group>"; };
 		C04DFF4B394FDDA90F44BF6C /* Pods-GonativeIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonativeIO.release.xcconfig"; path = "Target Support Files/Pods-GonativeIO/Pods-GonativeIO.release.xcconfig"; sourceTree = "<group>"; };
-		E6F9746921A5A67B00F4DCD6 /* ReachabilityGoNative.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityGoNative.m; sourceTree = "<group>"; };
-		E6F9746A21A5A67B00F4DCD6 /* ReachabilityGoNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityGoNative.h; sourceTree = "<group>"; };
+		E6F9746921A5A67B00F4DCD6 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E6F9746A21A5A67B00F4DCD6 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		EB8C5C07F7E78FC74468E745 /* Pods_GonativeIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GonativeIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20DBEBEDCC9D82A4CAA0222 /* Pods-GonativeIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GonativeIO.debug.xcconfig"; path = "Target Support Files/Pods-GonativeIO/Pods-GonativeIO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -411,8 +411,8 @@
 		2002B4A118A9991300495B3D /* LeanIOS */ = {
 			isa = PBXGroup;
 			children = (
-				E6F9746A21A5A67B00F4DCD6 /* ReachabilityGoNative.h */,
-				E6F9746921A5A67B00F4DCD6 /* ReachabilityGoNative.m */,
+				E6F9746A21A5A67B00F4DCD6 /* Reachability.h */,
+				E6F9746921A5A67B00F4DCD6 /* Reachability.m */,
 				203ADBA91C224F0300273067 /* GonativeIO.entitlements */,
 				20C23645193E32EA00F6ADF0 /* Config */,
 				20A13AA91905CB6C00B997DD /* FontAwesome */,
@@ -872,7 +872,7 @@
 				2002B4E718A99A9900495B3D /* REFrostedViewController.m in Sources */,
 				2018EE951907671A00EC4311 /* LEANUrlInspector.m in Sources */,
 				20B8FFB71EB79D3F000F4CFA /* GNCustomHeaders.m in Sources */,
-				E6F9746B21A5A67B00F4DCD6 /* ReachabilityGoNative.m in Sources */,
+				E6F9746B21A5A67B00F4DCD6 /* Reachability.m in Sources */,
 				2002B4E818A99A9900495B3D /* UIImage+REFrostedViewController.m in Sources */,
 				2002B4E918A99A9900495B3D /* UIView+REFrostedViewController.m in Sources */,
 				20FC7FB5199D1C7800A70B08 /* LEANTabManager.m in Sources */,

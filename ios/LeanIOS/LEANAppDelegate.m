@@ -162,7 +162,7 @@
     [self configureApplication];
     
     // listen for reachability
-    self.internetReachability = [ReachabilityGoNative reachabilityForInternetConnection];
+    self.internetReachability = [Reachability reachabilityForInternetConnection];
     [self.internetReachability startNotifier];
     
     // Facebook SDK

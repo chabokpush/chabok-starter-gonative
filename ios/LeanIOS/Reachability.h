@@ -48,6 +48,6 @@
 
 #import <AdpPushClient/AdpPushClient.h>
 
-@interface ReachabilityGoNative : PushClientServerReachability
+@interface Reachability : PushClientServerReachability
 
 @end

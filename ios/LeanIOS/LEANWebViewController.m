@@ -28,7 +28,7 @@
 #import "LEANToolbarManager.h"
 #import "LEANWebViewPool.h"
 #import "LEANDocumentSharer.h"
-#import "ReachabilityGoNative.h"
+#import "Reachability.h"
 #import "LEANActionManager.h"
 #import "GNRegistrationManager.h"
 #import "LEANWebViewIntercept.h"
@@ -2312,7 +2312,7 @@
 - (NSDictionary*)getConnectivity
 {
     LEANAppDelegate *appDelegate = (LEANAppDelegate*)[UIApplication sharedApplication].delegate;
-    ReachabilityGoNative *reachability = appDelegate.internetReachability;
+    Reachability *reachability = appDelegate.internetReachability;
     NetworkStatus status = [reachability currentReachabilityStatus];
     NSString *statusString;
     NSNumber *connected;
