@@ -4,13 +4,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. clone the project via git command or download the source code
 
-```javaScript
+```shell
 git clone https://github.com/chabokpush/chabok-starter-gonative.git
 ```
 
 2. Open Terminal app and install the ChabokPush cocoapoad in iOS path:
 
-```ruby
+```shell
 pod install
 ```
 
