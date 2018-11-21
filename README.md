@@ -8,11 +8,17 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/chabokpush/chabok-starter-gonative.git
 ```
 
+2. Open Terminal app and install the ChabokPush cocoapoad in iOS path:
 
-2. open project in your idea and sync it, then build the app to your device or emulator. 
+```ruby
+pod install
+```
 
-3. You can login with [Test environment](https://sandbox.push.adpdigital.com/login) to see the starter app info in the panel. 
-Please use the following account:
+3. open project in your idea and sync it, then build the app to your device or simulator.
+
+4. You can login with [Test environment](https://sandbox.push.adpdigital.com/login) to see the starter app info in the panel. 
+
+Please use the following account: 
 
 > **Username** : `starter` 
 >
