@@ -8,3 +8,7 @@ build/
 captures/
 
 \.DS_Store
+
+ios/Pods/
+
+*.lock
